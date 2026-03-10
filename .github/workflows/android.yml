@@ -2,13 +2,12 @@ name: Build Wifi Tool Vu Vinh An
 
 on:
   push:
-    branches: [ "main" ] # Tự động chạy mỗi khi bạn nhấn Commit
-  workflow_dispatch:      # Cho phép bạn nhấn nút chạy thủ công
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -18,19 +17,15 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: gradle
 
-      - name: Create Gradle Wrapper
-        run: gradle wrapper # Tạo bộ khởi chạy Gradle nếu thiếu
+      - name: Initialize Gradle
+        run: gradle wrapper # Tự tạo bộ chạy Gradle
 
-      - name: Grant Execute Permission
-        run: chmod +x gradlew
-
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug
-
-      - name: Upload Finished APK
+      - name: Build with Gradle
+        run: ./gradlew assembleDebug --stacktrace # Chạy build và hiện lỗi chi tiết nếu có
+        
+      - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
-          name: Wifi-Tool-Vu-Vinh-An
+          name: WifiTool-VuVinhAn
           path: app/build/outputs/apk/debug/app-debug.apk
