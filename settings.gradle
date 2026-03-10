@@ -1,0 +1,2 @@
+rootProject.name = "WifiBruteTool"
+include ':app'
