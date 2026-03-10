@@ -33,3 +33,5 @@ jobs:
         with:
           name: WifiTool-VuVinhAn-APK
           path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Build with Gradle
+        run: ./gradlew assembleDebug --info
