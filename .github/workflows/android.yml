@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -19,19 +20,19 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Initialize Gradle Wrapper
-        run: gradle wrapper
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 8.5 # Ép dùng bản 8.5 để tránh lỗi Gradle 9.3
 
       - name: Grant Execute Permission
-        run: chmod +x gradlew
+        run: chmod +x gradlew || true # Cấp quyền nếu file đã tồn tại
 
       - name: Build with Gradle
         run: ./gradlew assembleDebug --stacktrace
-        
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: WifiTool-VuVinhAn-APK
+          name: WifiTool-VuVinhAn-Final
           path: app/build/outputs/apk/debug/app-debug.apk
-      - name: Build with Gradle
-        run: ./gradlew assembleDebug --info
