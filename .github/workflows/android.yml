@@ -23,16 +23,21 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
         with:
-          gradle-version: 8.5 # Ép dùng bản 8.5 để tránh lỗi Gradle 9.3
+          gradle-version: 8.5
+
+      - name: Create Gradle Wrapper
+        # Bước này sẽ tự tạo file gradlew nếu trong kho của bạn chưa có
+        run: gradle wrapper
 
       - name: Grant Execute Permission
-        run: chmod +x gradlew || true # Cấp quyền nếu file đã tồn tại
+        run: chmod +x gradlew
 
       - name: Build with Gradle
+        # Chạy lệnh build chính thức
         run: ./gradlew assembleDebug --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: WifiTool-VuVinhAn-Final
+          name: WifiTool-VuVinhAn-Success
           path: app/build/outputs/apk/debug/app-debug.apk
