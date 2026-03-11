@@ -1,27 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.microsoft.com/apk/res/android"
-    package="com.hihi934.wifibrutetool">
+<LinearLayout xmlns:android="http://schemas.microsoft.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_horizontal">
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WIFI BRUTE TOOL"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#2196F3"
+        android:layout_marginBottom="30dp" />
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="WifiBruteTool"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
-</manifest>
+    <EditText
+        android:id="@+id/edtSSID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên Wifi (SSID)"
+        android:inputType="text"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bắt đầu tấn công"
+        android:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:background="#F5F5F5">
+        <TextView
+            android:id="@+id/txtLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Log: Sẵn sàng..."
+            android:fontFamily="monospace"
+            android:textSize="12sp" />
+    </ScrollView>
+</LinearLayout>
