@@ -4,46 +4,72 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
+    android:background="#FFFFFF"
     android:gravity="center_horizontal">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WIFI BRUTE TOOL"
-        android:textSize="24sp"
+        android:text="WIFI TOOL - VU VINH AN"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="#2196F3"
+        android:textColor="#E91E63"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp" />
 
     <EditText
         android:id="@+id/edtSSID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tên Wifi (SSID)"
+        android:hint="Nhập tên Wifi (SSID)"
         android:inputType="text"
-        android:padding="12dp"
-        android:layout_marginBottom="10dp"/>
+        android:padding="15dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginBottom="15dp"/>
 
     <Button
         android:id="@+id/btnStart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Bắt đầu tấn công"
+        android:layout_height="60dp"
+        android:text="BẮT ĐẦU TẤN CÔNG"
+        android:textStyle="bold"
         android:backgroundTint="#2196F3"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:elevation="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trạng thái hệ thống:"
+        android:layout_gravity="left"
+        android:layout_marginTop="20dp"
+        android:textSize="14sp"
+        android:textStyle="italic" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:background="#F5F5F5">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:background="#F0F0F0"
+        android:padding="10dp">
+
         <TextView
             android:id="@+id/txtLog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Log: Sẵn sàng..."
+            android:text="Đang chờ lệnh..."
+            android:textColor="#333333"
             android:fontFamily="monospace"
-            android:textSize="12sp" />
+            android:textSize="13sp" />
     </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phiên bản 1.0 - Vu Vinh An"
+        android:textSize="10sp"
+        android:layout_marginTop="10dp" />
+
 </LinearLayout>
