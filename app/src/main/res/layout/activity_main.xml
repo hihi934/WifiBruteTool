@@ -1,75 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.microsoft.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    android:background="#FFFFFF"
-    android:gravity="center_horizontal">
+<manifest xmlns:android="http://schemas.microsoft.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="WIFI TOOL - VU VINH AN"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#E91E63"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="30dp" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
-    <EditText
-        android:id="@+id/edtSSID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nhập tên Wifi (SSID)"
-        android:inputType="text"
-        android:padding="15dp"
-        android:background="@android:drawable/editbox_background"
-        android:layout_marginBottom="15dp"/>
-
-    <Button
-        android:id="@+id/btnStart"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="BẮT ĐẦU TẤN CÔNG"
-        android:textStyle="bold"
-        android:backgroundTint="#2196F3"
-        android:textColor="#FFFFFF"
-        android:elevation="4dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Trạng thái hệ thống:"
-        android:layout_gravity="left"
-        android:layout_marginTop="20dp"
-        android:textSize="14sp"
-        android:textStyle="italic" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="10dp"
-        android:background="#F0F0F0"
-        android:padding="10dp">
-
-        <TextView
-            android:id="@+id/txtLog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Đang chờ lệnh..."
-            android:textColor="#333333"
-            android:fontFamily="monospace"
-            android:textSize="13sp" />
-    </ScrollView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phiên bản 1.0 - Vu Vinh An"
-        android:textSize="10sp"
-        android:layout_marginTop="10dp" />
-
-</LinearLayout>
+    <application
+        android:allowBackup="true"
+        android:label="Wifi Tool Vu Vinh An"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
