@@ -1,76 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/xml/android"
+<RelativeLayout xmlns:android="http://schemas.microsoft.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:background="#ECEFF1">
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WIFI SCAN &amp; BRUTE"
+        android:text="Wifi Brute Tool"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#1A237E"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp" />
 
     <EditText
-        android:id="@+id/edtPrefix"
+        android:id="@+id/edtSSID"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/title"
-        android:hint="Nhập Prefix (VD: giathuy)"
-        android:text="giathuy"
-        android:padding="10dp"
+        android:hint="Nhập tên Wifi (SSID)"
+        android:padding="12dp"
         android:background="@android:drawable/editbox_background" />
-
-    <Button
-        android:id="@+id/btnScan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edtPrefix"
-        android:text="QUÉT WIFI XUNG QUANH"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#43A047" />
-
-    <ListView
-        android:id="@+id/lvWifi"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@id/btnScan"
-        android:layout_marginTop="5dp"
-        android:background="#FFFFFF"
-        android:divider="#DDDDDD"
-        android:dividerHeight="1dp" />
-
-    <TextView
-        android:id="@+id/txtStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lvWifi"
-        android:text="Trạng thái: Chọn 1 WiFi để bắt đầu"
-        android:padding="10dp"
-        android:textColor="#C62828"
-        android:textStyle="italic" />
 
     <Button
         android:id="@+id/btnStart"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@id/txtStatus"
-        android:text="BẮT ĐẦU DÒ MẬT KHẨU"
-        android:textSize="18sp"
-        android:backgroundTint="#1E88E5" />
-
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="by Vu Vinh An"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="14sp"
-        android:textStyle="italic"
-        android:textColor="#999999" />
+        android:layout_below="@id/edtSSID"
+        android:layout_marginTop="10dp"
+        android:text="Bắt đầu Brute Force"
+        android:background="#2196F3"
+        android:textColor="#FFFFFF" />
+
 </RelativeLayout>
